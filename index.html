@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <style>
+        h1{
+            display: inline;
+            font-family:'Permanent Marker', cursive ;
+            font-size: 100px;
+            color: white;
+
+        }
+        html{
+            background-image: url(bg.jpg);
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+        body{
+            width: 100%;
+            margin: 250px 35%;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <audio src="oh.mp3"></audio>
+</body>
+</html>
+<script>
+    var countDownDate=new Date("January 1, 2022 00:00:00").getTime()
+    var audio = document.getElementById("oh")
+    var myfunc = setInterval(function() {
+        var now = new Date().getTime()
+        var timeleft=countDownDate-now
+        if (countDownDate-now>=0){
+        var days=Math.floor(timeleft /(1000*60*60*24))
+        var hours=Math.floor((timeleft %(1000*60*60*24)) / (1000*60*60))
+        var minutes= Math.floor((timeleft %(1000*60*60)) / (1000*60))
+        var seconds= Math.floor((timeleft %(1000*60))/1000)
+        document.querySelector('body').innerHTML= ""
+    let dayleft=document.createElement("h1")
+    dayleft.innerHTML =days
+    dayleft.innerHTML+=":"
+    let hoursleft= document.createElement("h1")
+    hoursleft.innerHTML=hours
+    hoursleft.innerHTML+=":"
+    let minutesleft= document.createElement("h1")
+    minutesleft.innerHTML=minutes
+    minutesleft.innerHTML+=":"
+    let secondsleft= document.createElement("h1")
+    secondsleft.innerHTML=seconds
+
+    document.querySelector('body').append(dayleft,hoursleft,minutesleft,secondsleft)
+        }
+        else {
+            let minutesleft= document.createElement("h1")
+    minutesleft.innerHTML="New Year"
+    audio.play()
+
+            document.querySelector('body').append(newyear)
+        }
+    }, 1000)
+
+   
+    
+</script>
